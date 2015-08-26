@@ -13,6 +13,7 @@ All this work is done in the [build_env Dockerfile](https://github.com/samm-git/
 When build env is built we are cross-compiling smartmontools and creating pkg file, which is later packed into dmg disk image. This is done in the [smartmontools Docker env](https://github.com/samm-git/smartmontools_osx/blob/master/smartmontools/).
 ## To do
 - provide launchctl script and instructions to run smartd as daemon
+- Possibly move things from do_package.sh to the smartmontools Makefile (osx-package target).
 
 ## Limitations
 - Package can be installed only to the system root (/) partition. I disabled installation to the user volumes, because it is not clear what to do with configuration and uninstaller in this case. May be i will re-enable this later.
