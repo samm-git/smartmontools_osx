@@ -9,5 +9,5 @@ RUN cd /root && \
    CC=o64-clang CXX=o64-clang++ CFLAGS="-arch i386 -arch x86_64" CXXFLAGS="-arch i386 -arch x86_64" \
    && make && make install DESTDIR=$PWD/osx-pkg/root
 # build package
-RUN cd /root/smartmontools/osx-pkg && mkdir pkg && \
-  ( cd root && find . | cpio -o --format odc --owner 0:80 | gzip -c ) > pkg/Payload
+ADD  resources/ /root/smartmontools/osx-pkg/
+RUN cd /root/smartmontools/osx-pkg && ./do_package.sh && cp smartmontools.dmg /packages

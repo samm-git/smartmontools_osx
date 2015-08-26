@@ -1,0 +1,5 @@
+#!/bin/sh
+
+#osascript -e 'tell app "Finder" to display dialog "I am blabladialog."'
+#echo $1 $2 $3 $4 > /tmp/log.txt
+
